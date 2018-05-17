@@ -1,0 +1,70 @@
+\documentclass{article}
+% compile with pdflatex -shell-escape cb0.tex 
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepgfplotslibrary{colorbrewer}
+\pgfplotsset{cycle list/Set1-4}
+
+\begin{document}
+
+\pgfplotsset{
+	small,
+	title=Trimmed bounding boxes
+}
+
+\begin{center}
+\begin{tabular}{rl}
+
+    \begin{tikzpicture}
+    \begin{axis}[smooth,
+                 thick,
+                 domain=-2*pi:2*pi,
+                 cycle multi list={Set1-4}]
+      \addplot gnuplot {tanh(x)};
+      \addplot gnuplot {sin(x)};
+      \addplot gnuplot {atan(x)};
+      \addplot gnuplot {tanh(-x)};
+    \end{axis}
+    \end{tikzpicture}
+&
+    \begin{tikzpicture}
+    \begin{axis}[smooth,
+                 thick,
+                 domain=-2*pi:2*pi,
+                 cycle multi list={Set1-4}]
+      \addplot gnuplot {tanh(x)};
+      \addplot gnuplot {sin(x)};
+      \addplot gnuplot {atan(x)};
+      \addplot gnuplot {tanh(-x)};
+    \end{axis}
+    \end{tikzpicture}
+\\
+    \begin{tikzpicture}
+    \begin{axis}[smooth,
+                 thick,
+                 domain=-2*pi:2*pi,
+                 cycle multi list={Set1-4}]
+      \addplot gnuplot {tanh(x)};
+      \addplot gnuplot {sin(x)};
+      \addplot gnuplot {atan(x)};
+      \addplot gnuplot {tanh(-x)};
+    \end{axis}
+    \end{tikzpicture}
+&
+    \begin{tikzpicture}
+    \begin{axis}[smooth,
+                 thick,
+                 domain=-2*pi:2*pi,
+                 cycle multi list={Set1-4}]
+      \addplot gnuplot {tanh(x)};
+      \addplot gnuplot {sin(x)};
+      \addplot gnuplot {atan(x)};
+      \addplot gnuplot {tanh(-x)};
+    \end{axis}
+    \end{tikzpicture}
+	\\
+\end{tabular}%
+\end{center}
+
+\end{document}
